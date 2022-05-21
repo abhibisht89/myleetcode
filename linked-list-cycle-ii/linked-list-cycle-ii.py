@@ -12,6 +12,7 @@ class Solution:
         slow=head
         fast=head
         iscycle=False
+        
     
         while fast and fast.next:
             slow=slow.next
