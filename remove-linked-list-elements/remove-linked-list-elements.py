@@ -10,13 +10,14 @@ class Solution:
         cur=head
         
         while cur:
-            if cur.val==val and cur==head:
+            if cur.val==val:
+                if cur ==head:
                     head=head.next
-                    
-            elif cur.val==val and prev:
+                elif cur.next==None:
+                    prev.next=None
+                else:
                     prev.next=cur.next
             else:
-                    prev=cur
-                    
+                prev=cur
             cur=cur.next
         return head            
