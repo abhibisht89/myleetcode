@@ -7,22 +7,66 @@
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         
-        mp={}
+#         mp={}
         
         if headA is None or headB is None:
             return None
         
-        cur=headA
-        while cur:
-            mp[cur]=1
-            cur=cur.next
+#         cur=headA
+#         while cur:
+#             mp[cur]=1
+#             cur=cur.next
             
-        cur=headB
+#         cur=headB
         
-        while cur:
-            if cur in mp:
-                return cur
+#         while cur:
+#             if cur in mp:
+#                 return cur
+#             else:
+#                 mp[cur]=1
+#             cur=cur.next 
+        
+        
+        cura=headA
+        
+        while cura.next:
+            cura=cura.next
+        end=cura    
+        cura.next=headB     
+
+        
+        def getcyclenode(head):
+            if not head:
+                return None
+
+            slow=head
+            fast=head
+            iscycle=False
+
+
+            while fast and fast.next:
+                slow=slow.next
+                fast=fast.next.next
+
+                if slow==fast:
+                    iscycle=True
+                    break
+
+            if iscycle: 
+
+                slow=head
+
+                while slow!=fast:
+                    slow=slow.next
+                    fast=fast.next
+
+                return slow 
             else:
-                mp[cur]=1
-            cur=cur.next    
+                return None
+            
+        ansnode=getcyclenode(headA)  
+        
+        end.next=None
+        
+        return ansnode
         
