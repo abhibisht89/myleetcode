@@ -35,7 +35,7 @@ class Solution:
         
         cur=head
         
-        while cur!=slow:
+        while cur!=slow: #prev
             if prev.val!=cur.val:
                 return False
             prev=prev.next
