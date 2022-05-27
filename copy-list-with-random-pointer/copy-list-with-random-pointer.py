@@ -30,8 +30,10 @@ class Solution:
         cur=copy
         
         while cur:
-            org.next=org.next and org.next.next
-            cur.next=cur.next and cur.next.next
+            if org.next:
+                org.next=org.next.next
+            if cur.next:
+                cur.next=cur.next.next
             cur=cur.next
             org=org.next
         return copy    
