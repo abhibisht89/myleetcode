@@ -14,11 +14,9 @@ class Solution:
         
         copy=head
         while copy:
-            newnode=ListNode(copy.val)
-            newnode.next=copy.next
+            newnode=ListNode(copy.val,copy.next)
             copy.next=newnode
             copy=newnode.next
-        
         
         copy=head
         while copy:
@@ -29,7 +27,7 @@ class Solution:
         copy=head.next
         cur=copy
         
-        while cur:
+        while org:
             if org.next:
                 org.next=org.next.next
             if cur.next:
