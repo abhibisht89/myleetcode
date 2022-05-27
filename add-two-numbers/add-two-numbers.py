@@ -21,7 +21,7 @@ class Solution:
             
             summ=v1+v2+carry
             carry=summ//10
-            newnode=ListNode(int(summ%10))
+            newnode=ListNode(summ%10)
             cur.next=newnode
             cur=cur.next
         return head.next    
