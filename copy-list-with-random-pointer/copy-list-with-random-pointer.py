@@ -27,7 +27,7 @@ class Solution:
         copy=head.next
         cur=copy
         
-        while org:
+        while cur:
             if org.next:
                 org.next=org.next.next
             if cur.next:
