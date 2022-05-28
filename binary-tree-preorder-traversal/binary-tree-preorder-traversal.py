@@ -7,6 +7,7 @@
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         if not root: return root
+        
         # def solve(root):
         #     if not root:
         #         return root
@@ -21,7 +22,6 @@ class Solution:
         stack.append(root)
         
         def solve(root):
-            
             while stack:
                 node=stack.pop(-1)
                 ans.append(node.val)
