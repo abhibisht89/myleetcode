@@ -11,7 +11,6 @@ class Solution:
         ans=[]
         q=[]  
         q.append(root)
-        
         while q:
             level=[]
             for _ in range(len(q)):
@@ -22,7 +21,6 @@ class Solution:
                 if node .right:
                     q.append(node.right)
             ans.append(level)        
-        print(ans)
         return ans   
       
         
