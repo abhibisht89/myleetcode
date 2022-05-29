@@ -21,7 +21,7 @@ class Solution:
                     q.append(node.left)
                 if node .right:
                     q.append(node.right)
-            ans.append(level)       
+            ans.append(level)        
         print(ans)
         return ans   
       
