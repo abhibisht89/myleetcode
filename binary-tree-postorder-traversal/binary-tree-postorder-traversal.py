@@ -34,6 +34,5 @@ class Solution:
                         visited.add(node)
                         ans.append(node.val)
                         node=None
-            
         solve(root)
         return ans
