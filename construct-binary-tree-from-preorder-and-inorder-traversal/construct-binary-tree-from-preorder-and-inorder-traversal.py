@@ -9,10 +9,10 @@ class Solution:
         if not preorder or not inorder:
             return None
         
-        root=TreeNode(preorder[0])
-        mid=inorder.index(preorder[0])
+        root=TreeNode(preorder.pop(0))
+        mid=inorder.index(root.val)
         
-        root.right=self.buildTree(preorder[mid+1:],inorder[mid+1:])
-        root.left=self.buildTree(preorder[1:mid+1],inorder[0:mid])
+        root.left=self.buildTree(preorder,inorder[0:mid])
+        root.right=self.buildTree(preorder,inorder[mid+1:])
 
         return root
