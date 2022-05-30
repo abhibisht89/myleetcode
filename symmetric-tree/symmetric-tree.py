@@ -14,7 +14,7 @@ class Solution:
         if not l and not r:
             return True
         
-        if not l or not r:
+        if not l or not r:  
             return False
         
         if l.val==r.val:
