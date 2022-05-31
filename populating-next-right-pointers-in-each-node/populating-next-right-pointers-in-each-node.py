@@ -7,15 +7,11 @@ class Node:
         self.right = right
         self.next = next
 """
-
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        
         if not root:return root
-        
         q=[]
         q.append(root)
-        
         while q:
             cur=q.pop()
             if cur.left and cur.right:
