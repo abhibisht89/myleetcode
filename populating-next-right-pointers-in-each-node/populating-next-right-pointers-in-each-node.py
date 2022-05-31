@@ -10,22 +10,20 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        ans=[]
-        if not root:
-            return root
         
-        def solve(root):
-            q=[]
-            q.append(root)
-            while q:
-                curr=q.pop()
-                if curr.left and curr.right:
-                    curr.left.next = curr.right
-                    if curr.next:
-                        curr.right.next = curr.next.left
-                if curr.left:
-                    q.append(curr.left)
-                if curr.right:
-                    q.append(curr.right)  
-            return root  
-        return solve(root)
+        if not root:return root
+        
+        q=[]
+        q.append(root)
+        
+        while q:
+            cur=q.pop()
+            if cur.left and cur.right:
+                cur.left.next=cur.right
+                if cur.next:
+                    cur.right.next=cur.next.left
+            if cur.left:
+                q.append(cur.left)
+            if cur.right:
+                q.append(cur.right)
+        return root         
