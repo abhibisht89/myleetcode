@@ -19,4 +19,8 @@ class Solution:
         for i in range(len(s)//2):
             if s[i]!=s[len(s)-i-1]:
                 return 2
-        return 1    
+        return 1 
+    
+        #complexity
+        #Time - O(n)
+        #Space - O(1) - space for reverse string
